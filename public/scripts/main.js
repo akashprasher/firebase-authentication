@@ -26,10 +26,7 @@ signOutButton.addEventListener("click", signOutFromAccount);
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
-// console.log(provider);
-
 function clickButton() {
-  //   console.log("EventListner Working");
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -63,7 +60,6 @@ function getUserDetails(user) {
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     console.log(user);
-    // console.log("logged in");
     console.log(welcomeScreen);
     welcomeScreen.style.display = "none";
     userDetails.style.display = "block";
