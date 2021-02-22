@@ -16,19 +16,28 @@
   <body>
     <main>
       <section id="main" class="container">
-        <div class="text-center main-div-first">
+        <div id="welcome-screen" class="text-center main-div-first">
           <h3 class="heading-main">User Authentication using Firebase.</h3>
           <p class="para-main">Use your google Acoount for authentication.</p>
           <button id="signInButton" class="btn sign-btn">
-            <img
-              class="mr-2"
-              height="20px"
-              src="./assets/google.svg"
-              alt=""
-            />Sign With Google
+            <img class="mr-2" height="20px" src="./assets/google.svg" alt="" />Sign With Google
           </button>
         </div>
-        <div></div>
+        <div id="user-details" class="text-center main-user-details">
+          <h3 class="heading-main">User Details.</h3>
+          <div class="row usr-details mt-5">
+            <div class="col-sm-6 p-3">
+              <span id=user-img></span>
+            </div>
+            <div class="col-sm-6 text-align-l text-vertical p-3">
+              <p class="font-weight-bold">Name: <span id=user-name></span></p>
+              <p class="font-weight-bold">Email: <span id=user-email></span></p>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <button id="signInButton" class="btn sign-out-btn">Sign Out</button>
+          </div>  
+        </div>
       </section>
     </main>
     <!-- Scripts Below -->
