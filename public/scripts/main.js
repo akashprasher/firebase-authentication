@@ -14,6 +14,7 @@ firebase.analytics();
 // Firebase Config Above
 
 signInButton = document.getElementById("signInButton");
+signOutButton = document.getElementById("signOutButton");
 welcomeScreen = document.getElementById("welcome-screen");
 userDetails = document.getElementById("user-details");
 userName = document.getElementById("user-name");
@@ -21,6 +22,7 @@ userEmail = document.getElementById("user-email");
 userImage = document.getElementById("user-img");
 
 signInButton.addEventListener("click", clickButton);
+signOutButton.addEventListener("click", signOutFromAccount);
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -37,6 +39,18 @@ function clickButton() {
     .catch((err) => {
       console.log("Error Ocurred");
       console.log(err.code);
+    });
+}
+
+function signOutFromAccount() {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      // Signout
+    })
+    .catch((error) => {
+      // Error
     });
 }
 
