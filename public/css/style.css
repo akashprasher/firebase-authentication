@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.heading-main {
+  font-weight: 600;
+}
+
+.main-div-first {
+  margin-top: 40vh;
+}
+
+.sign-btn:hover {
+  color: #fff;
+  background-color: teal;
+}
