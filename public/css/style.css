@@ -23,6 +23,42 @@ body {
   background-color: teal;
 }
 
+.sign-out-btn {
+  color: #fff;
+  background-color: teal;
+}
+
+.sign-out-btn:hover {
+  color: rgb(36, 36, 36);
+  background-color: rgba(0, 128, 128, 0.637);
+}
+
+.main-user-details {
+  margin-top: 30vh;
+}
+
+#user-details {
+  display: none;
+}
+
+.text-align-l {
+  text-align: left;
+}
+
+.text-align-r {
+  text-align: right;
+  right: 0;
+}
+
+.avt-img {
+  border-radius: 50%;
+}
+
+.text-vertical {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 @media only screen and (max-width: 600px) {
   .heading-main {
     font-size: 15px;
@@ -32,7 +68,17 @@ body {
     font-size: 12px;
   }
 
-  .sign-btn {
+  .sign-btn,
+  .sign-out-btn {
+    font-size: 10px;
+  }
+
+  .text-align-l,
+  .text-align-r {
+    text-align: center;
+  }
+
+  .usr-details {
     font-size: 12px;
   }
 }
