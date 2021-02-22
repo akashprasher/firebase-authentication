@@ -22,3 +22,17 @@ body {
   color: #fff;
   background-color: teal;
 }
+
+@media only screen and (max-width: 600px) {
+  .heading-main {
+    font-size: 15px;
+  }
+
+  .para-main {
+    font-size: 12px;
+  }
+
+  .sign-btn {
+    font-size: 12px;
+  }
+}
