@@ -20,23 +20,32 @@
           <h3 class="heading-main">User Authentication using Firebase.</h3>
           <p class="para-main">Use your google Acoount for authentication.</p>
           <button id="signInButton" class="btn sign-btn">
-            <img class="mr-2" height="20px" src="./assets/google.svg" alt="" />Sign With Google
+            <img
+              class="mr-2"
+              height="20px"
+              src="./assets/google.svg"
+              alt=""
+            />Sign With Google
           </button>
         </div>
         <div id="user-details" class="text-center main-user-details">
           <h3 class="heading-main">User Details.</h3>
           <div class="row usr-details mt-5">
             <div class="col-sm-6 p-3">
-              <span id=user-img></span>
+              <span id="user-img"></span>
             </div>
             <div class="col-sm-6 text-align-l text-vertical p-3">
-              <p class="font-weight-bold">Name: <span id=user-name></span></p>
-              <p class="font-weight-bold">Email: <span id=user-email></span></p>
+              <p class="font-weight-bold">Name: <span id="user-name"></span></p>
+              <p class="font-weight-bold">
+                Email: <span id="user-email"></span>
+              </p>
             </div>
           </div>
           <div class="text-center mt-5">
-            <button id="signOutButton" class="btn sign-out-btn">Sign Out</button>
-          </div>  
+            <button id="signOutButton" class="btn sign-out-btn">
+              Sign Out
+            </button>
+          </div>
         </div>
       </section>
     </main>
@@ -49,20 +58,17 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
-    <body>
-      <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-      <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
-    
-      <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-      <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
-    
-      <!-- Add Firebase products that you want to use -->
-      <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
-    </body>
-    </script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
     <script src="./scripts/main.js"></script>
   </body>
 </html>
