@@ -64,3 +64,6 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# files ignore
+public/assets/watercolor-copy-space-background-with-floral-hand-drawn-elements.zip
