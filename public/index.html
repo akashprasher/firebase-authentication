@@ -28,6 +28,9 @@
             />Sign With Google
           </button>
         </div>
+        <div id="loader" class="loader-image">
+          <img src="./assets/loading.svg" alt="" />
+        </div>
         <div id="user-details" class="text-center main-user-details">
           <h3 class="heading-main">User Details.</h3>
           <div class="row usr-details mt-5">
@@ -50,6 +53,12 @@
       </section>
     </main>
     <!-- Scripts Below -->
+    <script>
+      function hideLoader() {
+        document.getElementById("loader").style.display = "none";
+      }
+      hideLoader();
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
