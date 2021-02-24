@@ -37,6 +37,11 @@ body {
   margin-top: 30vh;
 }
 
+.loader-image {
+  margin-top: 40vh;
+  text-align: center;
+}
+
 #user-details {
   display: none;
 }
