@@ -8,9 +8,15 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-image: url("../assets/background-image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .heading-main {
+  color: #fb8688;
   font-weight: 600;
 }
 
@@ -20,17 +26,17 @@ body {
 
 .sign-btn:hover {
   color: #fff;
-  background-color: teal;
+  background-color: #fb8688;
 }
 
 .sign-out-btn {
   color: #fff;
-  background-color: teal;
+  background-color: #fb8688;
 }
 
 .sign-out-btn:hover {
-  color: rgb(36, 36, 36);
-  background-color: rgba(0, 128, 128, 0.637);
+  color: #3f0001;
+  background-color: #fb8688ce;
 }
 
 .main-user-details {
@@ -57,6 +63,7 @@ body {
 
 .avt-img {
   border-radius: 50%;
+  border: 2px solid #fb8688;
 }
 
 .text-vertical {
