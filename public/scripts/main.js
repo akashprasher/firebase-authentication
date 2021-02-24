@@ -20,6 +20,7 @@ userDetails = document.getElementById("user-details");
 userName = document.getElementById("user-name");
 userEmail = document.getElementById("user-email");
 userImage = document.getElementById("user-img");
+loadingImage = document.getElementById("loader");
 
 signInButton.addEventListener("click", clickButton);
 signOutButton.addEventListener("click", signOutFromAccount);
@@ -27,6 +28,9 @@ signOutButton.addEventListener("click", signOutFromAccount);
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function clickButton() {
+  welcomeScreen.style.display = "none";
+  loadingImage.style.display = "block";
+
   firebase
     .auth()
     .signInWithPopup(provider)
@@ -34,6 +38,9 @@ function clickButton() {
       user = res.user;
     })
     .catch((err) => {
+      welcomeScreen.style.display = "block";
+      loadingImage.style.display = "none";
+
       console.log("Error Ocurred");
       console.log(err.code);
     });
@@ -59,8 +66,7 @@ function getUserDetails(user) {
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    console.log(user);
-    console.log(welcomeScreen);
+    loadingImage.style.display = "none";
     welcomeScreen.style.display = "none";
     userDetails.style.display = "block";
     getUserDetails(user);
