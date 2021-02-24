@@ -71,6 +71,22 @@ body {
   margin-bottom: auto;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  /* color: #000000; */
+  text-decoration: none !important;
+}
+
+footer a:hover {
+  /* color: #000000dc; */
+  text-decoration: none !important;
+}
+
 @media only screen and (max-width: 600px) {
   .heading-main {
     font-size: 15px;
