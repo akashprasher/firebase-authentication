@@ -1,6 +1,7 @@
 var footerAttributes = document.getElementById("attributes");
 var displayDetails = document.getElementById("user-details");
 var editBioCover = document.getElementById("bio-cover");
+var mainContent = document.getElementById("main-content");
 
 displayDetails.innerHTML = `
         <h3 class="heading-main">User Details.</h3>
@@ -52,4 +53,26 @@ footerAttributes.innerHTML = `
               <a class="font-weight-bold" target="_blank" href="https://freepik.com">Freepik</a>
             </p>
           </div>
+`;
+
+mainContent.innerHTML = `
+<section id="main" class="container">
+  <div id="welcome-screen" class="text-center main-div-first">
+    <h3 class="heading-main">User Authentication using Firebase.</h3>
+    <p class="para-main">Use your google Acoount for authentication.</p>
+    <button id="signInButton" class="btn sign-btn">
+      <img
+        class="mr-2"
+        height="20px"
+        src="./assets/google.svg"
+        alt=""
+      />Sign With Google
+    </button>
+  </div>
+  <div id="loader" class="loader-image">
+    <img height="100px" src="./assets/loading-icon.svg" alt="" />
+  </div>
+  <div id="user-details" class="text-center main-user-details"></div>
+</section>
+<section id="bio-cover"></section>
 `;
