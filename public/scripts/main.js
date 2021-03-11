@@ -1,3 +1,7 @@
+// const firebase = require("firebase");
+// Required for side-effects
+// require("firebase/firestore");
+
 var firebaseConfig = {
   apiKey: "AIzaSyACdB3ZVZZ4o6RlNwIbf6tDZW0k9DOvr4Q",
   authDomain: "workshop-firebase-757f5.firebaseapp.com",
@@ -7,9 +11,12 @@ var firebaseConfig = {
   appId: "1:201024999919:web:6094e336cd666a41de261a",
   measurementId: "G-S593S0JXGM",
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+// const db = firebase.firestore();
+var db = firebase.firestore();
 
 // Firebase Config Above
 
@@ -24,6 +31,15 @@ loadingImage = document.getElementById("loader");
 
 signInButton.addEventListener("click", clickButton);
 signOutButton.addEventListener("click", signOutFromAccount);
+var mainUser;
+// Edit Bio
+function displayEditArea() {
+  document.getElementById("bio-cover").style.display = "block";
+}
+
+function hideEditArea() {
+  document.getElementById("bio-cover").style.display = "none";
+}
 
 var provider = new firebase.auth.GoogleAuthProvider();
 
@@ -58,10 +74,64 @@ function signOutFromAccount() {
     });
 }
 
+function addDataFirestore(userData) {
+  // console.log(userData);
+  console.log("Hello! " + userData.displayName + " 🤩");
+
+  var docRef = db.collection("user").doc(userData.email);
+
+  docRef
+    .get()
+    .then((doc) => {
+      if (doc.exists) {
+        // console.log("Document Exists 🥰");
+        document.getElementById("user-bio").innerHTML = doc.data().bio;
+      } else {
+        // doc.data() will be undefined in this case
+        // console.log("No such document! 🙄");
+        docRef
+          .set({
+            name: userData.displayName,
+            imageURL: userData.photoURL,
+          })
+          .then(() => {
+            console.log("😎😎Document successfully written!😍");
+          })
+          .catch((error) => {
+            console.error("❌❌Error writing document: ", error);
+          });
+      }
+    })
+    .catch((error) => {
+      console.log("Error getting document:", error);
+    });
+}
+
 function getUserDetails(user) {
   userName.innerHTML = user.displayName;
   userEmail.innerHTML = user.email;
   userImage.innerHTML = `<img class="img-fluid avt-img" src="${user.photoURL}" alt="">`;
+  addDataFirestore(user);
+}
+
+function addBio(user) {
+  var bioValue = document.getElementById("newBio").value;
+  firebase.auth().onAuthStateChanged(function (user) {
+    db.collection("user")
+      .doc(user.email)
+      .update({
+        name: user.displayName,
+        imageURL: user.photoURL,
+        bio: bioValue,
+      })
+      .then(() => {
+        console.log("😎😎Bio successfully written!😍");
+        location.reload();
+      })
+      .catch((error) => {
+        console.error("❌❌Error writing document: ", error);
+      });
+  });
 }
 
 firebase.auth().onAuthStateChanged(function (user) {
