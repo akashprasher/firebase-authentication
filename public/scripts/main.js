@@ -126,7 +126,19 @@ function addBio(user) {
       })
       .then(() => {
         console.log("😎😎Bio successfully written!😍");
-        location.reload();
+        document.getElementById("successWriteBro").style.display = "block";
+
+        document.getElementById("form-bio").style.display = "none";
+        document.getElementById("successWriteBro").classList.add = "bio-form";
+        document.getElementById("successWriteBro").innerHTML =
+          "Succesfully Bio Saved✅";
+        setTimeout(function () {
+          document.getElementById("successWriteBro").style.display = "none";
+        }, 3000);
+        setTimeout(function () {
+          document.getElementById("form-bio").style.display = "block";
+          location.reload();
+        }, 200);
       })
       .catch((error) => {
         console.error("❌❌Error writing document: ", error);

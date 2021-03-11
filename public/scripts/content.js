@@ -12,7 +12,7 @@ displayDetails.innerHTML = `
             <div class="col-sm-6 text-align-l text-vertical p-3">
               <p class="font-weight-bold">Name: <span id="user-name"></span></p>
               <p class="font-weight-bold">Email: <span id="user-email"></span> </p>
-              <p class="font-weight-bold">Bio: <span id="user-bio"><span></p>
+              <p class="font-weight-bold">Bio: <span id="user-bio">Yay! it's your super cool bio🧡. Edit it.<span></p>
             </div>
           </div>
           <div class="text-center mt-3">
@@ -32,7 +32,7 @@ editBioCover.innerHTML = `
                   ><i class="far fa-times-circle"></i
                 ></a>
               </div>
-              <div class="bio-form">
+              <div id="form-bio" class="bio-form">
                 <form action="javascript:addBio()">
                   <div class="form-group">
                     <label for="Bio">Enter New Bio</label>
@@ -41,6 +41,7 @@ editBioCover.innerHTML = `
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
               </div>
+              <div><p id="successWriteBro"></p></div>
             </div>
           </div>
 `;
